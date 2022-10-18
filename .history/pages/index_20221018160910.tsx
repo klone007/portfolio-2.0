@@ -18,7 +18,7 @@ import Skills from './components/Skills';
 
 type Props = {
   pageInfo: PageInfo;
-  // experiences: Experience[];
+  experiences: Experience[];
   skills: Skill[];
   projects:Project[];
   socials: Social[];
@@ -82,7 +82,7 @@ export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
-  // const experiences: Experience[] = await fetchExperiences();
+  const experiences: Experience[] = await fetchExperiences();
   const projects: Project[] = await fetchProjects();
   const skills: Skill[] = await fetchSkills();
   const socials: Social[] = await fetchSocials();
@@ -90,7 +90,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
       pageInfo,
-      // experiences,
+      experiences,
       skills,
       projects,
       socials,

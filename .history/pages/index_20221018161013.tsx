@@ -90,7 +90,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
       pageInfo,
-      // experiences,
+      experiences,
       skills,
       projects,
       socials,
