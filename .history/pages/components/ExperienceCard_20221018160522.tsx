@@ -32,7 +32,7 @@ function ExperienceCard({experience}: Props) {
             <h4 className="text-4xl font-light">{experience?.jobTitle}</h4>
             <p className="font-bold text-2xl mt-1">{experience?.company}</p>
             <div className="flex space-x-2 my-2">
-                {experience.technologies.map((tech)=>
+                {tech.image experience.technologies.map((tech)=>
                     <img 
                     key = {tech._id}
                     className="h-10 w-15 rounded-full"

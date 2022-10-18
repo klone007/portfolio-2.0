@@ -4,7 +4,7 @@ import { Experience } from '../../typings';
 import { urlFor } from '../../sanity';
 
 type Props = {
-    experience: Experience;
+    experience: Experience
 };
 
 function ExperienceCard({experience}: Props) {
@@ -12,8 +12,7 @@ function ExperienceCard({experience}: Props) {
     <article className="flex flex-col rounded-lg items-center space-y-5 flex-shrink-0
      w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10
      hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden">
-        {
-         experience.companyImage && <motion.img
+        {}<motion.img
             initial={{
                 y: -100,
                 opacity:0
@@ -24,10 +23,9 @@ function ExperienceCard({experience}: Props) {
             whileInView={{opacity:1, y:0}}
             viewport={{once:true}}
             className="w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
-            src={urlFor(experience.).url()}
+            src={urlFor(experience.companyImage).url()}
             alt=""
-            />
-        }
+        />
         <div className="px-0 md:px-10">
             <h4 className="text-4xl font-light">{experience?.jobTitle}</h4>
             <p className="font-bold text-2xl mt-1">{experience?.company}</p>
@@ -36,7 +34,7 @@ function ExperienceCard({experience}: Props) {
                     <img 
                     key = {tech._id}
                     className="h-10 w-15 rounded-full"
-                    src={urlFor(tech.image).url()} />
+                    src={urlFor(tech?.image).url()} />
                 )}
 
             </div>

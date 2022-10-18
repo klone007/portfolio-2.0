@@ -5,7 +5,7 @@ import { urlFor } from '../../sanity';
 
 type Props = {
     directionLeft?: boolean;
-    skill: Skill;
+    skill: Skill[];
 }
 
 function Skill({directionLeft, skill}: Props) {

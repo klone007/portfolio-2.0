@@ -36,7 +36,7 @@ function ExperienceCard({experience}: Props) {
                     <img 
                     key = {tech._id}
                     className="h-10 w-15 rounded-full"
-                    src={urlFor(tech.image).url()} />
+                    src={urlFor(tech?.image).url()} />
                 )}
 
             </div>

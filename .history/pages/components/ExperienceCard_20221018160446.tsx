@@ -13,7 +13,7 @@ function ExperienceCard({experience}: Props) {
      w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10
      hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden">
         {
-         experience.companyImage && <motion.img
+          <motion.img
             initial={{
                 y: -100,
                 opacity:0
@@ -36,7 +36,7 @@ function ExperienceCard({experience}: Props) {
                     <img 
                     key = {tech._id}
                     className="h-10 w-15 rounded-full"
-                    src={urlFor(tech.image).url()} />
+                    src={urlFor(tech?.image).url()} />
                 )}
 
             </div>
