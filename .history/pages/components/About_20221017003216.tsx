@@ -1,0 +1,58 @@
+import React from 'react';
+import {motion} from "framer-motion";
+import { PageInfo } from '../../typings';
+type Props = {
+    pageInfo: PageInfo
+}
+
+function About({pageInfo}: Props) {
+  return (
+    <motion.div 
+    initial={{
+        opacity:0,
+    }}
+    whileInView={{
+        opacity:1
+    }}
+    transition={{
+        duration:1.6
+    }}
+    className='flex flex-col relative h-screen text-center md:text-left
+    md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center'>
+        <h3 className="absolute top-24 uppercase tracking-[20px]
+         text-gray-500 text-2xl">About</h3>
+        
+        {/*profile pic :  */}
+        <motion.img
+            initial={{
+                x:-200,
+            }}
+            whileInView={{
+                x:0
+            }}
+            viewport={{once:true}}
+            transition={{
+                duration:1.2
+            }}
+            className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover
+            md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"    
+            src=
+            alt="image not loading"
+        />
+        <div className="space-y-10 px-0 md:px-10">
+            <h4 className="text-4xl font-semibold">Here is a little background</h4>
+            <p className='text-base'>
+                {/* I'm Shivam, a self-taught programmer and here's a little bit about me...
+                I'm seeking for a new position as a web developer at a dynamic organisation.
+                With the finest sass practises and functional Javascript authoring, my focus is on creating contemporary, clean React code.
+                I mostly use React, but I always attempt to learn new things and adjust to whichever tools are required for the work.
+                I enjoy discovering new things and getting to know new people.  */}
+                {pageInfo?.backgroundInformation}
+            </p>
+        </div>
+
+    </motion.div>
+  )
+}
+
+export default About

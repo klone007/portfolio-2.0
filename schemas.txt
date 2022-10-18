@@ -1,0 +1,250 @@
+// First, we must import the schema creator
+import createSchema from 'part:@sanity/base/schema-creator'
+
+// Then import schema types from any plugins that might expose them
+import schemaTypes from 'all:part:@sanity/base/schema-type'
+
+import pageInfo from './pageInfo'
+import skill from './skill'
+import experience from './experience'
+import social from './social'
+import project from './project'
+
+
+export default createSchema({
+  
+  name: 'default',
+
+  types: schemaTypes.concat([
+
+    pageInfo,skill,experience,social,project
+
+  ]),
+});
+
+
+
+
+
+
+--------------------------------pageInfo.js---------------------------------------------
+
+export default {
+  name: 'pageInfo',
+  title: 'PageInfo',
+  type: 'document',
+  fields: [
+    {
+      name:"name",
+      title:"Name",
+      type:"string",
+    },
+    {
+      name:"role",
+      title:"Role",
+      type:"string",
+    },
+    {
+      name:"heroImage",
+      title:"Image",
+      type:"image",
+      options:{
+        hotspot:true,
+      },
+    },
+    {
+      name:"backgroundInformation",
+      title:"BackgroundInformation",
+      type:"string",
+    },
+    {
+      name:"profilrPic",
+      title:"ProfilePic",
+      type:"image",
+      option:{
+        hotspot: true,
+      },
+    },
+    {
+      name:"phoneNumber",
+      title:"PhoneNumber",
+      type:"string",
+    },
+    {
+      name:"email",
+      title:"Email",
+      type:"string",
+    },
+    {
+      name:"address",
+      title:"Address",
+      type:"string",
+    },
+    {
+      name:"socials",
+      title:"Socials",
+      type:"array",
+      of: [{type: "reference", to: {type:"social"}}],
+    },
+  ],
+
+}
+
+------------------------------------experience.js----------------------------------------------------
+export default {
+  name: 'experience',
+  title: 'Experience',
+  type: 'document',
+  fields: [
+    {
+      name:"jobTitle",
+      title:"jobTitle",
+      type:"string",
+    },
+    {
+      name:"companyImage",
+      title:"Company Image",
+      type:"image",
+      option:{
+        hotspot: true,
+      },
+    },
+    {
+      name:"company",
+      title:"Company",
+      type:"text",
+    },
+    {
+      name:"dateStarted",
+      title:"DateStarted",
+      type:"date",
+    },
+    {
+      name:"dateEnded",
+      title:"DateEnded",
+      type:"date",
+    },
+    {
+      name:"isCurrentlyWorkingHere",
+      title:"isCurrentlyWorkingHere",
+      type:"boolean",
+    },
+    {
+      name:"technologies",
+      title:"Technologies",
+      type:"array",
+      of: [{type:"refrence", to:{type:"skill"}}],
+    },
+    {
+      name:"points",
+      title:"Points",
+      type:"array",
+      of:[{type: "string"}],
+    },
+
+  ],
+
+};
+
+
+--------------------------------------------project.js--------------------------------------------------------------
+
+export default {
+  name: 'project',
+  title: 'Project',
+  type: 'document',
+  fields: [
+    {
+      name:"title",
+      title:"title",
+      description:"Title of the project",
+      type:"string",
+    },
+    {
+      name:"image",
+      title:"Image",
+      type:"image",
+      option:{
+        hotspot: true,
+      },
+    },
+    {
+      name:"summary",
+      title:"Summary",
+      type:"text",
+    },
+    {
+      name:"technologies",
+      title:"Technologies",
+      type:"array",
+      of: [{type:"refrence", to:{type:"skill"}}],
+    },
+    {
+      name:"linkToBuild",
+      title:"LinkToBuild",
+      type:"url",
+      
+    },
+
+  ],
+
+};
+
+
+--------------------------------------------------------------------------skill.js---------------------------------------------------------------
+
+
+
+export default {
+  name: 'skill',
+  title: 'Skill',
+  type: 'document',
+  fields: [
+    {
+      name:"title",
+      title:"title",
+      description:"Title of the skill",
+      type:"string",
+    },
+    {
+      name:"progress",
+      title:"Progress",
+      description:"Progress of skill from 0 to 100%",
+      type:"number",
+      validation: (Rule)=> Rule.min(0).max(100),
+    },
+    {
+      name:"image",
+      title:"Image",
+      type:"image",
+      option:{
+        hotspot: true,
+      },
+    },
+
+  ],
+
+};
+
+------------------------------------------------social.js--------------------------------------------------------
+
+export default {
+  name: 'social',
+  title: 'Social',
+  type: 'document',
+  fields: [
+    {
+      name:"title",
+      title:"title",
+      description:"platform for social media",
+      type:"string",
+    },
+    {
+      name:"url",
+      title:"Url",
+      type:"url",
+    },
+
+  ],
+
+};
