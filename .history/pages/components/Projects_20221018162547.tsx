@@ -48,12 +48,12 @@ function Projects({projects}: Props) {
 
                   <div className="flex items-center space-x-2 justify-center">
                     {project.technologies.map((technology)=>
-                      (<img 
+                      <img 
                         className="h-10 w-10"
                         key={technology._id}
                         src= {urlFor(technology.image).url()}
                         alt=""
-                      />)
+                      />
                     )}
 
                   </div>
@@ -61,7 +61,7 @@ function Projects({projects}: Props) {
                       {project?.summary}
                     </p>
                   </div>
-                </div>)
+                </div>
               
             )}
         </div>

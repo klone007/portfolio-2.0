@@ -33,7 +33,7 @@ function ExperienceCard({experience}: Props) {
             <p className="font-bold text-2xl mt-1">{experience?.company}</p>
             <div className="flex space-x-2 my-2">
                 {experience.technologies.map((tech)=>
-                   (<img 
+                   () <img 
                     key = {tech._id}
                     className="h-10 w-15 rounded-full"
                     src={urlFor(tech.image).url()} />)
@@ -49,7 +49,7 @@ function ExperienceCard({experience}: Props) {
             <ul className="list-disc space-y-4 ml-5 text-lg max-h-96 pr-5 overflow-y-scroll scrollbar-thin
             scrollbar-track-black scrollbar-thumb-[#F7AB0A]/80">
                 {experience.points.map((pts,i)=>
-                    (<li key={i}>{pts}</li>)
+                    <li key={i}>{pts}</li>
                 )}
             </ul>
         </div>

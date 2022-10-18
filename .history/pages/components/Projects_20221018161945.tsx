@@ -22,7 +22,7 @@ function Projects({projects}: Props) {
         snap-mandatory z-20  scrollbar-track-gray-400/20 scrollbar-thin scrollbar-thumb-[#F7AB0A]/80">
           {
             projects.map((project, i) =>     
-                (<div key={project._id} className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5
+                <div key={project._id} className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5
                 items-center justify-center p-20 md:p-44 h-screen">
                   <Link  href={project?.linkToBuild} >
                   <a target="_blank" rel="noopener noreferrer" className='link-item'>
@@ -48,12 +48,12 @@ function Projects({projects}: Props) {
 
                   <div className="flex items-center space-x-2 justify-center">
                     {project.technologies.map((technology)=>
-                      (<img 
+                      <img 
                         className="h-10 w-10"
                         key={technology._id}
                         src= {urlFor(technology.image).url()}
                         alt=""
-                      />)
+                      />
                     )}
 
                   </div>
@@ -61,7 +61,7 @@ function Projects({projects}: Props) {
                       {project?.summary}
                     </p>
                   </div>
-                </div>)
+                </div>
               
             )}
         </div>

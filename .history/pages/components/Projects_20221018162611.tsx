@@ -53,7 +53,7 @@ function Projects({projects}: Props) {
                         key={technology._id}
                         src= {urlFor(technology.image).url()}
                         alt=""
-                      />)
+                      />
                     )}
 
                   </div>
