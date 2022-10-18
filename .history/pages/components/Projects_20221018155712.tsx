@@ -26,17 +26,15 @@ function Projects({projects}: Props) {
                 items-center justify-center p-20 md:p-44 h-screen">
                   <Link  href={project?.linkToBuild} >
                   <a target="_blank" rel="noopener noreferrer" className='link-item'>
-                    {
-                      project.image && <motion.img
-                      className="cursor-pointer hover:border"
-                      initial={{y:-300, opacity:0}}
-                      transition={{duration:1.2}}
-                      whileInView={{opacity:1 , y:0}}
-                      viewport={{once: true}}
-                      src= {urlFor(project.image).url()}
-                      alt= ""/>
-                    }
                     
+                    <motion.img
+                    className="cursor-pointer hover:border"
+                    initial={{y:-300, opacity:0}}
+                    transition={{duration:1.2}}
+                    whileInView={{opacity:1 , y:0}}
+                    viewport={{once: true}}
+                    src= {urlFor(project.image).url()}
+                    alt= ""/>
                     </a>
                   </Link>
                   <div className="space-y-10 px-0 md:px-10 max-w-6xl">

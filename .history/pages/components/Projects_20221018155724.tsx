@@ -27,7 +27,7 @@ function Projects({projects}: Props) {
                   <Link  href={project?.linkToBuild} >
                   <a target="_blank" rel="noopener noreferrer" className='link-item'>
                     {
-                      project.image && <motion.img
+                      <motion.img
                       className="cursor-pointer hover:border"
                       initial={{y:-300, opacity:0}}
                       transition={{duration:1.2}}
