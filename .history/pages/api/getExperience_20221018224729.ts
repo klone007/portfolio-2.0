@@ -14,11 +14,16 @@ type Data = {
   }
   
   export default async function handler(
-    req: NextApiRequest,
-    res: NextApiResponse<Data>
-  ) 
-  {
+    // req: NextApiRequest,
+    // res: NextApiResponse<Data>
+  ) {
     
+    const res = await sanityClient.fetch(query)
+
+const experiences: Experience [ ] = result
+
+return experiences 
     const experiences: Experience[] = await sanityClient.fetch(query);
     res.status(200).json({ experiences})
   }
+  

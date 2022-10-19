@@ -2,7 +2,7 @@ import type { GetServerSideProps, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { Experience, PageInfo, Project, Skill, Social } from '../typings';
-import { fetchExperiences } from '../utils/fetchExperiences';
+// import { fetchExperiences } from '../utils/fetchExperiences';
 import { fetchPageInfo } from '../utils/fetchPageInfo';
 import { fetchProjects } from '../utils/fetchProjects';
 import { fetchSkills } from '../utils/fetchSkills';
@@ -13,19 +13,19 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
-import WorkExperience from './components/WorkExperience';
+// import WorkExperience from './components/WorkExperience';
 
 
 type Props = {
   pageInfo: PageInfo;
-  experiences: Experience[];
+  // experiences: Experience[];
   skills: Skill[];
   projects:Project[];
   socials: Social[];
 }
 
 
-const Home = ({pageInfo, skills, experiences,projects, socials} : Props) => {
+const Home = ({pageInfo, skills, projects, socials} : Props) => {
   return (
     <div 
     className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll 
@@ -46,9 +46,9 @@ const Home = ({pageInfo, skills, experiences,projects, socials} : Props) => {
       </section>
 
       
-      <section id="experience" className="snap-start">
+      {/* <section id="experience" className="snap-start">
         <WorkExperience experiences={experiences} />
-      </section>
+      </section> */}
 
      
       <section id="skills" className="snap-start">

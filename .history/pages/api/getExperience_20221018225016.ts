@@ -17,8 +17,4 @@ type Data = {
     req: NextApiRequest,
     res: NextApiResponse<Data>
   ) 
-  {
-    
-    const experiences: Experience[] = await sanityClient.fetch(query);
-    res.status(200).json({ experiences})
-  }
+  

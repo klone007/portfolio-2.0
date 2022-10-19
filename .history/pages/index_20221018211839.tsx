@@ -25,7 +25,7 @@ type Props = {
 }
 
 
-const Home = ({pageInfo, skills, experiences,projects, socials} : Props) => {
+const Home = ({pageInfo, skills, projects, socials} : Props) => {
   return (
     <div 
     className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll 

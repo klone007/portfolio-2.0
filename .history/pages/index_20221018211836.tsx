@@ -2,7 +2,7 @@ import type { GetServerSideProps, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { Experience, PageInfo, Project, Skill, Social } from '../typings';
-import { fetchExperiences } from '../utils/fetchExperiences';
+// import { fetchExperiences } from '../utils/fetchExperiences';
 import { fetchPageInfo } from '../utils/fetchPageInfo';
 import { fetchProjects } from '../utils/fetchProjects';
 import { fetchSkills } from '../utils/fetchSkills';
@@ -25,7 +25,7 @@ type Props = {
 }
 
 
-const Home = ({pageInfo, skills, experiences,projects, socials} : Props) => {
+const Home = ({pageInfo, skills, projects, socials} : Props) => {
   return (
     <div 
     className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll 
