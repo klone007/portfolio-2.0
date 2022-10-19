@@ -24,7 +24,7 @@ function About({pageInfo}: Props) {
          text-gray-500 text-2xl">About</h3>
         
         {/*profile pic : "https://images.unsplash.com/photo-1544502062-f82887f03d1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1259&q=80" */}
-            <motion.img
+    <motion.img
             initial={{
                 x:-200,
             }}
@@ -40,7 +40,7 @@ function About({pageInfo}: Props) {
             src="https://images.unsplash.com/photo-1544502062-f82887f03d1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1259&q=80"
             alt="image not loading"
         />
-        
+        }
         <div className="space-y-10 px-0 md:px-10">
             <h4 className="text-4xl font-semibold">Here is a little background</h4>
             <p className='text-base'>
