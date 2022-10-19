@@ -82,24 +82,24 @@ const Home = ({pageInfo, skills, experiences, projects, socials} : Props) => {
 
 export default Home;
 
-// export const getStaticProps: GetStaticProps<Props> = async () => {
-//   const pageInfo: PageInfo = await fetchPageInfo();
-//   const experiences: Experience[] = await fetchExperiences();
-//   const projects: Project[] = await fetchProjects();
-//   const skills: Skill[] = await fetchSkills();
-//   const socials: Social[] = await fetchSocials();
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const pageInfo: PageInfo = await fetchPageInfo();
+  const experiences: Experience[] = await fetchExperiences();
+  const projects: Project[] = await fetchProjects();
+  const skills: Skill[] = await fetchSkills();
+  const socials: Social[] = await fetchSocials();
 
-//   return {
-//     props: {
-//       pageInfo,
-//       experiences,
-//       skills,
-//       projects,
-//       socials,
-//     },
-//   };
+  return {
+    props: {
+      pageInfo,
+      experiences,
+      skills,
+      projects,
+      socials,
+    },
+  };
 
-// };
+};
 
 export const getServerSideProps = async () => {
 
@@ -125,10 +125,8 @@ export const getServerSideProps = async () => {
   *[_type == "social"]
   `;
 	const pageInfo: PageInfo = await sanityClient.fetch(pageInfoQuery); 
-	const skills: Skill[]  = await sanityClient.fetch(skillsQuery); 
-	const experiences: Experience[] = await sanityClient.fetch(experiencesQuery); 
-	const projects: Project[] = await sanityClient.fetch(projectsQuery); 
-	const socials: Social[] = await sanityClient.fetch(socialsQuery); 
+	const pageInfo: PageInfo = await sanityClient.fetch(pageInfoQuery); 
+	const pageInfo: PageInfo = await sanityClient.fetch(pageInfoQuery); 
 
 
 

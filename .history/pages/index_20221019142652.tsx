@@ -82,54 +82,42 @@ const Home = ({pageInfo, skills, experiences, projects, socials} : Props) => {
 
 export default Home;
 
-// export const getStaticProps: GetStaticProps<Props> = async () => {
-//   const pageInfo: PageInfo = await fetchPageInfo();
-//   const experiences: Experience[] = await fetchExperiences();
-//   const projects: Project[] = await fetchProjects();
-//   const skills: Skill[] = await fetchSkills();
-//   const socials: Social[] = await fetchSocials();
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const pageInfo: PageInfo = await fetchPageInfo();
+  const experiences: Experience[] = await fetchExperiences();
+  const projects: Project[] = await fetchProjects();
+  const skills: Skill[] = await fetchSkills();
+  const socials: Social[] = await fetchSocials();
 
-//   return {
-//     props: {
-//       pageInfo,
-//       experiences,
-//       skills,
-//       projects,
-//       socials,
-//     },
-//   };
+  return {
+    props: {
+      pageInfo,
+      experiences,
+      skills,
+      projects,
+      socials,
+    },
+  };
 
-// };
+};
 
 export const getServerSideProps = async () => {
 
   const pageInfoQuery =groq`
   *[_type == "pageInfo"][0]
 `;
-  const experiencesQuery =groq`
-  *[_type == "experience"]{
-    ...,
-    technologies[]->
-   }
-  `;  
-  const skillsQuery =groq`
-  *[_type == "skill"]
+const pageInfoQuery =groq`
+*[_type == "pageInfo"][0]
+`;  const pageInfoQuery =groq`
+*[_type == "pageInfo"][0]
 `; 
-   const projectsQuery =groq`
-   *[_type == "project"]{
-    ...,
-    technologies[]->
-   }
+ const pageInfoQuery =groq`
+*[_type == "pageInfo"][0]
   `;  
-  const socialsQuery =groq`
-  *[_type == "social"]
+  const pageInfoQuery =groq`
+  *[_type == "pageInfo"][0]
   `;
 	const pageInfo: PageInfo = await sanityClient.fetch(pageInfoQuery); 
-	const skills: Skill[]  = await sanityClient.fetch(skillsQuery); 
-	const experiences: Experience[] = await sanityClient.fetch(experiencesQuery); 
-	const projects: Project[] = await sanityClient.fetch(projectsQuery); 
-	const socials: Social[] = await sanityClient.fetch(socialsQuery); 
-
 
 
   return {

@@ -1,8 +1,6 @@
 import type { GetServerSideProps, GetStaticProps } from 'next';
-import { groq } from 'next-sanity';
 import Head from 'next/head';
 import Link from 'next/link';
-import { sanityClient } from '../sanity';
 import { Experience, PageInfo, Project, Skill, Social } from '../typings';
 import { fetchExperiences } from '../utils/fetchExperiences';
 import { fetchPageInfo } from '../utils/fetchPageInfo';
@@ -82,55 +80,12 @@ const Home = ({pageInfo, skills, experiences, projects, socials} : Props) => {
 
 export default Home;
 
-// export const getStaticProps: GetStaticProps<Props> = async () => {
-//   const pageInfo: PageInfo = await fetchPageInfo();
-//   const experiences: Experience[] = await fetchExperiences();
-//   const projects: Project[] = await fetchProjects();
-//   const skills: Skill[] = await fetchSkills();
-//   const socials: Social[] = await fetchSocials();
-
-//   return {
-//     props: {
-//       pageInfo,
-//       experiences,
-//       skills,
-//       projects,
-//       socials,
-//     },
-//   };
-
-// };
-
-export const getServerSideProps = async () => {
-
-  const pageInfoQuery =groq`
-  *[_type == "pageInfo"][0]
-`;
-  const experiencesQuery =groq`
-  *[_type == "experience"]{
-    ...,
-    technologies[]->
-   }
-  `;  
-  const skillsQuery =groq`
-  *[_type == "skill"]
-`; 
-   const projectsQuery =groq`
-   *[_type == "project"]{
-    ...,
-    technologies[]->
-   }
-  `;  
-  const socialsQuery =groq`
-  *[_type == "social"]
-  `;
-	const pageInfo: PageInfo = await sanityClient.fetch(pageInfoQuery); 
-	const skills: Skill[]  = await sanityClient.fetch(skillsQuery); 
-	const experiences: Experience[] = await sanityClient.fetch(experiencesQuery); 
-	const projects: Project[] = await sanityClient.fetch(projectsQuery); 
-	const socials: Social[] = await sanityClient.fetch(socialsQuery); 
-
-
+export const GetStaticProps: GetServerSideProps<Props> = async () => {
+  const pageInfo: PageInfo = await fetchPageInfo();
+  const experiences: Experience[] = await fetchExperiences();
+  const projects: Project[] = await fetchProjects();
+  const skills: Skill[] = await fetchSkills();
+  const socials: Social[] = await fetchSocials();
 
   return {
     props: {
@@ -141,4 +96,5 @@ export const getServerSideProps = async () => {
       socials,
     },
   };
-}
+
+};
