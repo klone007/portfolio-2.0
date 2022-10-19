@@ -38,7 +38,7 @@ function About({pageInfo}: Props) {
             }}
             className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover
             md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"    
-            src="https://images.unsplash.com/photo-1544502062-f82887f03d1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1259&q=80"
+            src={urlFor(pageInfo?.heroImage).url()}
             alt="image not loading"
         />
         }
