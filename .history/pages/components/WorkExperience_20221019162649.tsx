@@ -20,9 +20,9 @@ function WorkExperience({experiences}: Props) {
 
          <div className="w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory mt-20
           scrollbar-track-gray-400/20 scrollbar-thin scrollbar-thumb-[#F7AB0A]/80">
-           {/* {experiences?.map((experience)=>
+           {experiences?.map((experience)=>
           //  <ExperienceCard key={experience._id} experience={experience} />
-           )} */}
+           )}
          </div>
     </motion.div>
   )
