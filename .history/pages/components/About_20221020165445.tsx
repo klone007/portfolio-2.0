@@ -24,8 +24,7 @@ function About({pageInfo}: Props) {
          text-gray-500 text-2xl">About</h3>
         
         {/*profile pic : "https://images.unsplash.com/photo-1544502062-f82887f03d1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1259&q=80" */}
-           {
-            pageInfo.profilePic && <motion.img
+            <motion.img
             initial={{
                 x:-200,
             }}
@@ -38,11 +37,10 @@ function About({pageInfo}: Props) {
             }}
             className="-mb-20 md:mb-0 pt-10 flex-shrink-0 w-56 h-56  rounded-full object-cover
             md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"    
-            src={urlFor(pageInfo?.profilePic).url()}
+            src={urlFor(pageInfo.).url()}
             alt="image not loading"
         />
         
-           } 
         <div className="space-y-10 px-0 md:px-10 pr-5 overflow-y-scroll scrollbar-thin
             scrollbar-track-black scrollbar-thumb-[#F7AB0A]/80 max-h-40">
             <h4 className="xl:text-4xl font-semibold text-2xl  ">Here is a little background</h4>
