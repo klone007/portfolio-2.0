@@ -34,7 +34,7 @@ function ContactMe({}: Props) {
                 <span className="decoration-[#F7AB0A]/50 underline">Lets talk</span>
             </h4>
 
-            <div className="space-y-8">
+            <div className="space-y-10">
                 <div className="flex items-center space-x-5 justify-center xl:text-2xl text-base">
                     <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse"/>
                     <p>+14166184845</p>
@@ -45,7 +45,7 @@ function ContactMe({}: Props) {
                     <p>shivammpanchal@gmail.com</p>
                 </div>
 
-                <div className="flex items-center space-x-5  justify-center">
+                <div className="flex items-center space-x-5 justify-center">
                     <MapPinIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse"/>
                     <p>5 Durrington cres</p>
                 </div>
@@ -53,7 +53,7 @@ function ContactMe({}: Props) {
                 <form 
                 onSubmit={handleSubmit(onSubmit)}
                 className="flex flex-col space-y-2 w-fit mx-auto ">
-                    <div className="space-x-2 pb-3 space-y-3">
+                    <div className="space-x-2 pb-3 space-y-3 ">
                         <input {...register('name')} className="contactInput" placeholder="Name" type="text" />
                         <input {...register('email')} className="contactInput" placeholder="Email" type="email" />
                     </div>

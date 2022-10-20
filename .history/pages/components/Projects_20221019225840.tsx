@@ -18,7 +18,7 @@ function Projects({projects}: Props) {
     overflow-hidden md:flex-row max-w-full mx-auto z-0 items-center">
         <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">Projects</h3>
 
-        <div className="relative w-full flex overflow-x-scroll mt-5 overflow-y-hidden snap-x
+        <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x
         snap-mandatory z-20  scrollbar-track-gray-400/20 scrollbar-thin scrollbar-thumb-[#F7AB0A]/80">
           {
             projects?.map((project, i) =>     
@@ -40,7 +40,7 @@ function Projects({projects}: Props) {
                     </a>
                   </Link>
                   <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-                    <h4 className="xl:text-4xl font-semibold text-center text-sm">
+                    <h4 className="xl:text-4xl font-semibold text-center sm:text-sm">
                       <span className="underline decoration-[#F7AB0A]/50">
                           Case Study {i+1} of {projects.length}:
                       </span> {" "} {project?.title}
