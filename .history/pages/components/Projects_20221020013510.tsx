@@ -41,7 +41,7 @@ function Projects({projects}: Props) {
                   </Link>
                   <div className="space-y-10 px-0 md:px-10 max-w-6xl pr-5 overflow-y-scroll scrollbar-thin
             scrollbar-track-black scrollbar-thumb-[#F7AB0A]/80 max-h-40">
-                    <h4 className="xl:text-4xl font-semibold text-center text-2xl">
+                    <h4 className="xl:text-4xl font-semibold text-center text-">
                       <span className="underline decoration-[#F7AB0A]/50">
                           Case Study {i+1} of {projects.length}:
                       </span> {" "} {project?.title}

@@ -41,8 +41,7 @@ function About({pageInfo}: Props) {
             alt="image not loading"
         />
         
-        <div className="space-y-10 px-0 md:px-10 pr-5 overflow-y-scroll scrollbar-thin
-            scrollbar-track-black scrollbar-thumb-[#F7AB0A]/80 max-h-40">
+        <div className="space-y-10 px-0 md:px-10 overflow-y-scroll max-h-10">
             <h4 className="xl:text-4xl font-semibold text-2xl  ">Here is a little background</h4>
             <p className='text-base  '>
                 {pageInfo?.backgroundInformation}
