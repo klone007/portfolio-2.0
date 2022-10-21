@@ -13,7 +13,7 @@ export default {
       name:"image",
       title:"Image",
       type:"image",
-      options:{
+      optiond:{
         hotspot: true,
       },
     },

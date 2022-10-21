@@ -12,7 +12,7 @@ export default {
       name:"companyImage",
       title:"Company Image",
       type:"image",
-      options:{
+      option:{
         hotspot: true,
       },
     },
