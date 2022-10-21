@@ -17,6 +17,7 @@ export default {
       name:"heroImage",
       title:"Image",
       type:"image",
+      imgurl:"imgurl",
       options:{
         hotspot:true,
       },
@@ -30,6 +31,7 @@ export default {
       name:"profilePic",
       title:"ProfilePic",
       type:"image",
+      imgurl:"imgurl",
       options:{
         hotspot: true,
       },
