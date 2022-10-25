@@ -44,11 +44,7 @@ function About({pageInfo}: Props) {
             alt="image not loading"
         /> */}
             <div className=' relative mt-20 md:mb-0 flex-shrink-0 w-56 h-56  md:w-64 md:h-96 xl:w-[400px] xl:h-[500px]'>
-                <Image src={'/profilePhoto.gif'} 
-                className="-mb-20 md:mb-0 pt-10 flex-shrink-0 w-56 h-56  rounded-full object-cover
-                md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
-                layout='fill'
-                 />
+                <Image src={'/rofile.jpg'} width={150} height={150} />
             </div>
             
            
